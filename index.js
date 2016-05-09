@@ -24,6 +24,19 @@ $(document).ready(function () {
             window.location.hash = hash;
         });
     });
+    
+    // Resize video
+    scaleVideoContainer();
+
+    initBannerVideoSize('.video-container .filter');
+    initBannerVideoSize('.video-container video');
+        
+    $(window).on('resize', function() {
+        scaleVideoContainer();
+        scaleBannerVideoSize('.video-container .poster img');
+        scaleBannerVideoSize('.video-container .filter');
+        scaleBannerVideoSize('.video-container video');
+    });
 })
 
 
@@ -43,19 +56,6 @@ function initialize() {
     });
 
     marker.setMap(map);
-    
-    // Resize video
-    scaleVideoContainer();
-
-    initBannerVideoSize('.video-container .filter');
-    initBannerVideoSize('.video-container video');
-        
-    $(window).on('resize', function() {
-        scaleVideoContainer();
-        scaleBannerVideoSize('.video-container .poster img');
-        scaleBannerVideoSize('.video-container .filter');
-        scaleBannerVideoSize('.video-container video');
-    });
 }
 
 function scaleVideoContainer() {
@@ -103,6 +103,5 @@ function scaleBannerVideoSize(element) {
         $(this).width(videoWidth).height(videoHeight);
 
         $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
-
     });
 }
