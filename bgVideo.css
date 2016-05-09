@@ -1,0 +1,73 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+
+/*option 1, white space underneath*/
+/*
+#video1{
+    width: 100%;
+    height: auto;
+}
+*/
+
+
+/*option 2, white space to the right*/
+/*
+#video1{
+    width: auto;
+    height: 100%;
+}
+*/
+
+
+/*option 3, with overflow hidden in our containing element we can set the video to always have a minimum width and height of at least 100%. The aspect ratio is preserved by the overflow that extends beyond the window, which we know is hidden. What happens therefore is the browser is always full of video, leaving no gaps, page space or scrollbars, however resized.*/
+#video1{
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+
+
+.navbar {
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+}
+
+.navbar li a,
+.navbar .navbar-brand {
+    color: #d5d5d5 !important;
+}
+
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #29292c !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+.open .dropdown-toggle {
+    color: #fff;
+    background-color: #555 !important;
+}
+
+.dropdown-menu li a {
+    color: #000 !important;
+}
+
+.dropdown-menu li a:hover {
+    background-color: red !important;
+}
